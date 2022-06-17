@@ -56,6 +56,17 @@ body {
   width: 0px !important;
 }
 
+.is {
+  animation: keyUl 500ms;
+  animation-fill-mode: forwards;
+  display: block !important;
+}
+
+.es {
+  animation: keyRight 500ms;
+  animation-fill-mode: forwards;
+}
+
 @keyframes linha {
   0% {
     opacity: 0;
@@ -64,6 +75,28 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes keyLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes keyRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100);
   }
 }
 
@@ -95,9 +128,8 @@ header h1 {
 header ul.block {
   top: 0px;
   left: 0px;
-  bottop: 0px;
+  bottom: 0px;
   width: 200px;
-  height: 100vh;
   padding: 2rem;
   position: fixed;
   background: #333;
@@ -110,7 +142,7 @@ header ul.block li {
 }
 
 header ul.block li a {
-  color: #000;
+  color: #fff;
   font-weight: 400;
 }
 
@@ -229,6 +261,13 @@ header .btn-toogle i::after {
   letter-spacing: 2px;
   padding: .8rem 2rem;
   outline: 1px solid #333;
+}
+
+@media (max-width: 375px) {
+  .home .container .hrefs a {
+    display: block;
+    margin: 1.5rem 1rem;
+  }
 }
 
 .home .container .hrefs a.service {
@@ -423,11 +462,25 @@ header .btn-toogle i::after {
   }
 }
 
+@media (max-width: 458px) {
+  .contacto .form {
+    width: 300px;
+  }
+}
+
 .contacto .form div {
   padding: 1rem 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+}
+
+@media (max-width: 458px) {
+  .contacto .form div {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
 }
 
 .contacto .form label {

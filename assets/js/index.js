@@ -1,10 +1,23 @@
 let $ = (e) => document.querySelector(e),   
     btnToggle = $(".btn-toogle"),
-    ulToggle = $("header ul")
+    ul = $("header ul")
     ;
 
 
 btnToggle.addEventListener("click", function(){
-    
-    ulToggle.classList.add("block", "keyUl");
+
+    if(ul.classList.value != "block is") 
+    {
+        ul.classList.add("block", "is");
+    }
+    else
+    {
+        ul.classList.remove("block", "is");
+    }
+   
 })
+
+ul.addEventListener("click", function(){
+    ul.classList.remove("block", "is");
+})
+

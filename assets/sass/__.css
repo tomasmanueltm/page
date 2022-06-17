@@ -55,6 +55,17 @@ body {
   width: 0px !important;
 }
 
+.is {
+  animation: keyUl 500ms;
+  animation-fill-mode: forwards;
+  display: block !important;
+}
+
+.es {
+  animation: keyRight 500ms;
+  animation-fill-mode: forwards;
+}
+
 @keyframes linha {
   0% {
     opacity: 0;
@@ -63,5 +74,27 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes keyLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes keyRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100);
   }
 }

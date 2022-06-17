@@ -64,6 +64,14 @@ body
     grid-template-columns: repeat($column, 1fr)
     grid-gap: $gap
 
+.is
+    animation: keyUl 500ms
+    animation-fill-mode: forwards
+    display: block!important
+
+.es 
+    animation: keyRight 500ms
+    animation-fill-mode: forwards
 
 @keyframes linha
     0%
@@ -72,8 +80,23 @@ body
     100%
         opacity: 1
         transform:  translateY(0) 
-        
-    
+
+@keyframes keyLeft
+    0%
+        opacity: 0
+        transform: translateX(-100vw)
+    100%
+        opacity: 1
+        transform:  translateX(0)        
+@keyframes keyRight
+    0%
+        opacity: 1
+        transform: translateX(0)
+    100%
+        opacity: 0
+        transform:  translateX(-100)  
+
+
 // Query
 @mixin desk
     @media ( max-width:  992px)
@@ -81,15 +104,10 @@ body
 @mixin table
     @media ( max-width:  768px)
         @content
-@mixin mobile-desk
-    @media ( max-width:  600px)
-        @content
-@mixin mobile-desk
-    @media ( max-width:  425px)
+@mixin mobile
+    @media ( max-width:  458px)
         @content
 @mixin mobile-normal
     @media ( max-width:  375px)
         @content
-@mixin mobile-init
-    @media ( max-width:  320px)
-        @content
+

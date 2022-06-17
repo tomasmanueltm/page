@@ -26,12 +26,12 @@ header
         &.block
             top: 0px
             left: 0px
-            bottop: 0px
+            bottom: 0px
             width: 200px
-            height: 100vh
             padding: 2rem
             position: fixed
             background: #333
+            
             display: none
 
             li
@@ -39,7 +39,7 @@ header
                 margin: 1rem 0
 
                 a
-                    color: #000
+                    color: #fff
                     font-weight: 400
         
         li
@@ -51,6 +51,8 @@ header
                 font-weight: 900
                 font-size: 1.1rem
                 letter-spacing: 2px
+
+
 
     .btn-toogle
         width: 35px
@@ -129,11 +131,14 @@ header
                 padding: .8rem 2rem
                 outline: 1px solid #333
                     
+                @include mobile-normal
+                        display: block
+                        margin: 1.5rem 1rem
+    
                 &.service
                     color: #fff
                     outline: none
                     background: #333
-
                     
 .services
     // height: 100vh
@@ -235,7 +240,6 @@ header
     @include table
         height: 100%
         flex-direction: column
-    @include mobile-desk
 
     .descreve
         left: 10px
@@ -274,9 +278,15 @@ header
         @include table
             width: 500px
 
+        @include mobile
+            width: 300px
+
         div
             padding: 1rem 0
             @include grid(2, 1rem)
+
+            @include mobile
+                @include grid(1, 1rem)
 
         label
             width: 100%
