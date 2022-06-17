@@ -3,10 +3,12 @@
   font-family: "Roboto";
   src: url("../font/Roboto.ttf");
 }
+
 @font-face {
   font-family: "Linotte";
   src: url("../font/Linotte.otf");
 }
+
 * {
   margin: 0px;
   padding: 0px;
@@ -54,17 +56,6 @@ body {
   width: 0px !important;
 }
 
-@-webkit-keyframes linha {
-  0% {
-    opacity: 0;
-    transform: translateY(-100vh);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes linha {
   0% {
     opacity: 0;
@@ -75,99 +66,296 @@ body {
     transform: translateY(0);
   }
 }
-.home {
-  height: 100vh;
-  position: relative;
-  background: #999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  -webkit-animation: linha 500ms;
-          animation: linha 500ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  display: none;
-}
-.home header {
+
+header {
   top: 0px;
   left: 0px;
+  z-index: 2;
   display: flex;
-  align-items: normal;
+  align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  position: absolute;
+  position: fixed;
+  background: #fff;
   width: 100%;
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
 }
-.home header h1 {
+
+header h1 {
   font-size: 2rem;
   font-weight: 900;
 }
-.home header ul li {
+
+@media (max-width: 768px) {
+  header ul {
+    display: none;
+  }
+}
+
+header ul.block {
+  top: 0px;
+  left: 0px;
+  bottop: 0px;
+  width: 200px;
+  height: 100vh;
+  padding: 2rem;
+  position: fixed;
+  background: #333;
+  display: none;
+}
+
+header ul.block li {
+  display: block;
+  margin: 1rem 0;
+}
+
+header ul.block li a {
+  color: #000;
+  font-weight: 400;
+}
+
+header ul li {
   margin: 0 2rem 0 0;
   display: inline-block;
 }
-.home header ul li a {
+
+header ul li a {
   color: #333;
   font-weight: 900;
   font-size: 1.1rem;
   letter-spacing: 2px;
 }
+
+header .btn-toogle {
+  width: 35px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header .btn-toogle {
+    display: flex;
+  }
+}
+
+header .btn-toogle i {
+  float: left;
+  display: block;
+  width: inherit;
+  padding: .2rem;
+  cursor: pointer;
+  background: #000;
+  border-radius: 2px;
+}
+
+header .btn-toogle i::before, header .btn-toogle i::after {
+  top: 2px;
+  left: 0px;
+  content: "";
+  display: block;
+  width: inherit;
+  height: .4rem;
+  position: absolute;
+  background: inherit;
+  border-radius: 2px;
+}
+
+header .btn-toogle i::after {
+  top: unset;
+  bottom: 2px;
+}
+
+.home {
+  height: 100vh;
+  position: relative;
+  background: #eee;
+  width: 100%;
+  padding: 4rem;
+  animation: linha 500ms;
+  animation-fill-mode: forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .home {
+    height: 100%;
+    padding: 6rem 4rem;
+  }
+}
+
 .home .container {
   display: none;
   width: 100%;
   padding: 2rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+
 .home .container .legenda {
   text-align: center;
 }
+
 .home .container .legenda h1 {
   padding: 1rem;
   font-weight: 700;
   font-size: 3rem;
   letter-spacing: 2px;
 }
+
 .home .container .legenda p {
   font-size: 1.8rem;
 }
-.home .container .legenda .hrefs {
+
+.home .container .hrefs {
   display: block;
   margin: 2rem 0 0;
+  text-align: center;
 }
-.home .container .legenda .hrefs a {
-  color: #fff;
-  margin: 0 0.6rem;
+
+.home .container .hrefs a {
+  color: #333;
+  margin: 0 .6rem;
   border-radius: 3px;
   letter-spacing: 2px;
-  padding: 0.8rem 2rem;
-  outline: 1px solid #fff;
+  padding: .8rem 2rem;
+  outline: 1px solid #333;
 }
-.home .container .legenda .hrefs a.service {
+
+.home .container .hrefs a.service {
+  color: #fff;
   outline: none;
   background: #333;
 }
 
 .services {
-  height: 100vh;
+  display: block;
   width: 100%;
   padding: 4em;
-  position: relative;
   background: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+
+@media (max-width: 768px) {
+  .services {
+    height: unset;
+  }
+}
+
 .services .dialogo {
-  text-align: center;
   margin: 0 auto;
+  padding: 2rem 0;
+  text-align: center;
 }
+
 .services .dialogo h2 {
   color: #333;
-  font-size: 2rem;
   padding: 1rem 0;
   font-weight: 900;
+  font-size: 2.5rem;
   letter-spacing: 2px;
 }
+
+.services .dialogo p {
+  width: 65%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  font-size: 1.1rem;
+  word-spacing: 1px;
+  text-align: center;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .services .dialogo p {
+    width: 100%;
+  }
+}
+
+.services article {
+  padding: 3rem 0;
+}
+
+@media (max-width: 768px) {
+  .services article {
+    padding: 3rem;
+  }
+}
+
+.services article ul {
+  width: inherit;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .services article ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+  }
+}
+
+.services article ul li {
+  padding: 1rem;
+  border-radius: 3px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.services article ul li .img {
+  width: 80px;
+  height: 80px;
+  padding: 1rem;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 2px solid #ccc;
+}
+
+.services article ul li .img img {
+  display: none;
+}
+
+.services article ul li .img i {
+  font-size: 2rem;
+}
+
+.services article ul li h3 {
+  padding: 1rem 0;
+  font-weight: 900;
+}
+
+.services article ul li p {
+  color: #666;
+  font-size: .9rem;
+  line-height: 1.6rem;
+}
+
 .contacto {
-  height: 85vh;
+  height: 100vh;
   background: #000;
   position: relative;
   display: flex;
@@ -178,11 +366,14 @@ body {
   width: 100%;
   padding: 4rem 3rem;
 }
+
 @media (max-width: 768px) {
   .contacto {
+    height: 100%;
     flex-direction: column;
   }
 }
+
 .contacto .descreve {
   left: 10px;
   z-index: 0;
@@ -191,66 +382,74 @@ body {
   height: 200px;
   background: #fff;
   text-align: center;
-  height: -webkit-max-content;
-  height: -moz-max-content;
   height: max-content;
   position: relative;
   border-radius: 8px;
 }
+
 @media (max-width: 768px) {
   .contacto .descreve {
     top: 10px;
+    left: unset;
   }
 }
+
 .contacto .descreve hgroup {
   padding: 3rem;
 }
+
 .contacto .descreve hgroup i {
   font-size: 3.4rem;
-  padding: 1rem 0 0.5rem;
+  padding: 1rem 0 .5rem;
 }
+
 .contacto .descreve hgroup h1 {
-  padding: 0.5rem;
+  padding: .5rem;
   font-weight: 900;
 }
+
 .contacto .form {
   z-index: 1;
   width: 650px;
   border-radius: 8px;
   background: #333;
-  height: -webkit-max-content;
-  height: -moz-max-content;
   height: max-content;
   padding: 1rem 1.8rem;
 }
+
 @media (max-width: 768px) {
   .contacto .form {
     width: 500px;
   }
 }
+
 .contacto .form div {
   padding: 1rem 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
 }
+
 .contacto .form label {
   width: 100%;
 }
+
 .contacto .form label span {
   color: #fff;
   display: block;
-  padding: 0.4rem 0;
-  font-size: 0.9rem;
+  padding: .4rem 0;
+  font-size: .9rem;
 }
+
 .contacto .form label input {
   width: 100%;
   border: none;
   outline: none;
-  font-size: 0.8rem;
+  font-size: .8rem;
   border-radius: 3px;
-  padding: 0.6rem 0.5rem;
+  padding: .6rem .5rem;
 }
+
 .contacto .form label textarea {
   width: 100%;
   height: 150px;
@@ -263,12 +462,14 @@ body {
   min-height: 150px;
   border-radius: 3px;
   font-family: Linotte;
-  padding: 0.6rem 0.5rem;
+  padding: .6rem .5rem;
 }
+
 .contacto .form label textarea:focus {
   border: none;
   outline: none;
 }
+
 .contacto .form button {
   float: right;
   border: none;
@@ -281,5 +482,5 @@ body {
   border-radius: 3px;
   background: #fff;
   letter-spacing: 2px;
-  padding: 0.8rem 2rem;
-}/*# sourceMappingURL=index.css.map */
+  padding: .8rem 2rem;
+}
