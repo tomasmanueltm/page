@@ -44,3 +44,4 @@
   .bi-heart-cart::before { content: "\f416"; }
   .bi-heart-full::before { content: "\f415"; }
   .bi-rect-down::before { content: "\f282"; }
+  .bi-chat-sms::before { content: "\f262"; }

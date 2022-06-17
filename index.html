@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LandPage</title>
+    <title>Landing Page</title>
     <link rel="stylesheet" href="assets/sass/index.css">
 </head>
 <body>
@@ -24,42 +24,66 @@
         <div class="legenda">
             <h1>YOUR INFORMATION TECHNOLOGY PARTNER</h1>
             <p>GET YOUR ADVANCED IT DEPARTMENT FOR A COFFEE PER DAY</p>
-            <div class="hrefs"><a href="" class="service"></a><a href="" class="contacto"></a></div>
+            <div class="hrefs">
+                <a href="" class="service">Serviço</a>
+                <a href="#" class="contacto">Contacto</a></div>
         </div>
     </div>
 </section>
 
 <section class="services" id="services">
     <div class="dialogo">
-        <h2></h2>
-        <p></p>
+        <h2>WHAT WE DO</h2>
+        <p>WE OFFER ADVANCED IT SOLUTIONS TO STARTUP AND SMALL TO MEDIUM ENTERPRISES ESPECIALLY IF YOU HAVE REMOTE TEAM</p>
     </div>
     
     <article>
         <ul>
             <li>
                 <img src="" alt="">
-                <h3></h3>
-                <p></p>
+                <h3>FAST DEPLOYMENT</h3>
+                <p>Select amongst our solutions ready portfolio the service that best suits your need. It will be ready and customized for your business in minutes.</p>
             </li>
             <li>
                 <img src="" alt="">
-                <h3></h3>
-                <p></p>
+                <h3>YOU ARE IN CONTROL</h3>
+                <p>You have full control of your company accesses and can invite your organization to work together</p>
             </li>
             <li>
                 <img src="" alt="">
-                <h3></h3>
-                <p></p>
+                <h3>CUSTOM SERVICES</h3>
+                <p>We want to be your preferred partner, hence involve us on your business objective and hear our suggestion on how our services can boost your business</p>
             </li>
         </ul>
     </article>
 </section>
 
-<section class="cotacto" id="contacto">
-    <form action="">
-        <input type="email" name="" id="">
-        <button>Carregar</button>
+<section class="contacto" id="contacto">
+    <painel class="descreve">
+        <hgroup>
+            <i class="bi bi-chat-sms"></i>
+            <h1>Obrigado</h1>
+            <p>Você tem uma questão?</p>
+        </hgroup>
+    </painel>
+    <form action="" enctype="multipart/form-data" class="form">
+        <div>
+            <label for="">
+                <span>E-mail</span>
+                <input type="email" name="email" placeholder="Seunome@servico.domicio" id="email" required>
+            </label>
+            
+            <label for="">
+                <span>Nome</span>
+                <input type="text" name="nome" placeholder="Seu nome" id="nome" required>
+            </label>
+        </div>
+        
+        <label for="">
+            <span>Mensagem</span>
+            <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem" cols="30" rows="10" required></textarea>
+        </label>
+        <button><i class="bi"></i> Enviar</button>
     </form>
 </section>
 
