@@ -11,14 +11,21 @@ header
     left: 0px
     z-index: 2
     // bottom: 0px
-    @include flex(center)
     position: fixed
     background: #fff
-    @include padrao(1rem 3rem)
+    @include flex(center)
+    @include padrao(1rem 3rem, 100vw)
+
+    @include table 
+        // width: 100vw
+        padding: 1rem 2rem
 
     h1
         font-size: 2rem
-        font-weight: 900   
+        font-weight: 900  
+
+        @include table
+            font-size: min(4vw) 
     ul
         @include table 
             display: none
@@ -87,7 +94,6 @@ header
                 top: unset
                 bottom: 2px
                 
-
 .home
     height: 100vh
     position: relative
@@ -115,8 +121,14 @@ header
                 font-weight: 700
                 font-size: 3rem
                 letter-spacing: 2px
+
+                @include table
+                    font-size: min(10vw)
             p
                 font-size: 1.8rem
+
+                @include table
+                    font-size: min(6vw)
             
         .hrefs
             display: block
@@ -138,9 +150,8 @@ header
                 &.service
                     color: #fff
                     outline: none
-                    background: #333
-                    
-.services
+                    background: #333                
+.servico
     // height: 100vh
     display: block
     @include padrao
@@ -150,6 +161,7 @@ header
 
     @include table
         height: unset
+        padding: 4rem 2rem
 
     .dialogo
         margin: 0 auto
@@ -181,11 +193,10 @@ header
         padding: 3rem 0
 
         @include table
-            padding: 3rem
+            padding: 3rem 1rem
 
         ul
             width: inherit
-
             @include grid(3, 2rem)
 
             @include table
@@ -229,16 +240,17 @@ header
                     font-size: .9rem
                     line-height: 1.6rem
                     // texta-lign: center                
-.contacto
+.contato
     height: 100vh
     background: #000                                                                      
     position: relative
     @include flex(center)
     justify-content: center
-    @include padrao(4rem 3rem)
+    @include padrao(4rem 3rem 3.5rem)
 
     @include table
         height: 100%
+        width: unset
         flex-direction: column
 
     .descreve
@@ -266,6 +278,17 @@ header
             h1
                 padding: .5rem
                 font-weight: 900
+            span
+                padding: 1rem
+                display: block
+
+                a
+                    color: #333
+                    margin: 0 .2rem
+
+                    i  
+                        font-size: 1.4rem 
+                
 
     .form
         z-index: 1
@@ -339,4 +362,11 @@ header
             background: #fff
             letter-spacing: 2px
             padding: .8rem 2rem
+.footer
+    background: #000
+    @include padrao(1rem)
+
+    p
+        color: #fff
+        text-align: center  
             

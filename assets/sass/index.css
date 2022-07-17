@@ -3,12 +3,10 @@
   font-family: "Roboto";
   src: url("../font/Roboto.ttf");
 }
-
 @font-face {
   font-family: "Linotte";
   src: url("../font/Linotte.otf");
 }
-
 * {
   margin: 0px;
   padding: 0px;
@@ -57,14 +55,29 @@ body {
 }
 
 .is {
-  animation: keyUl 500ms;
-  animation-fill-mode: forwards;
+  -webkit-animation: keyUl 500ms;
+          animation: keyUl 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   display: block !important;
 }
 
 .es {
-  animation: keyRight 500ms;
-  animation-fill-mode: forwards;
+  -webkit-animation: keyRight 500ms;
+          animation: keyRight 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes linha {
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes linha {
@@ -77,7 +90,16 @@ body {
     transform: translateY(0);
   }
 }
-
+@-webkit-keyframes keyLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @keyframes keyLeft {
   0% {
     opacity: 0;
@@ -88,7 +110,16 @@ body {
     transform: translateX(0);
   }
 }
-
+@-webkit-keyframes keyRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100);
+  }
+}
 @keyframes keyRight {
   0% {
     opacity: 1;
@@ -99,32 +130,38 @@ body {
     transform: translateX(-100);
   }
 }
-
 header {
   top: 0px;
   left: 0px;
   z-index: 2;
+  position: fixed;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  position: fixed;
-  background: #fff;
-  width: 100%;
+  width: 100vw;
   padding: 1rem 3rem;
 }
-
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 2rem;
+  }
+}
 header h1 {
   font-size: 2rem;
   font-weight: 900;
 }
-
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 4vw;
+  }
+}
 @media (max-width: 768px) {
   header ul {
     display: none;
   }
 }
-
 header ul.block {
   top: 0px;
   left: 0px;
@@ -135,29 +172,24 @@ header ul.block {
   background: #333;
   display: none;
 }
-
 header ul.block li {
   display: block;
   margin: 1rem 0;
 }
-
 header ul.block li a {
   color: #fff;
   font-weight: 400;
 }
-
 header ul li {
   margin: 0 2rem 0 0;
   display: inline-block;
 }
-
 header ul li a {
   color: #333;
   font-weight: 900;
   font-size: 1.1rem;
   letter-spacing: 2px;
 }
-
 header .btn-toogle {
   width: 35px;
   height: 30px;
@@ -168,35 +200,31 @@ header .btn-toogle {
   flex-direction: column;
   display: none;
 }
-
 @media (max-width: 768px) {
   header .btn-toogle {
     display: flex;
   }
 }
-
 header .btn-toogle i {
   float: left;
   display: block;
   width: inherit;
-  padding: .2rem;
+  padding: 0.2rem;
   cursor: pointer;
   background: #000;
   border-radius: 2px;
 }
-
 header .btn-toogle i::before, header .btn-toogle i::after {
   top: 2px;
   left: 0px;
   content: "";
   display: block;
   width: inherit;
-  height: .4rem;
+  height: 0.4rem;
   position: absolute;
   background: inherit;
   border-radius: 2px;
 }
-
 header .btn-toogle i::after {
   top: unset;
   bottom: 2px;
@@ -208,21 +236,21 @@ header .btn-toogle i::after {
   background: #eee;
   width: 100%;
   padding: 4rem;
-  animation: linha 500ms;
-  animation-fill-mode: forwards;
+  -webkit-animation: linha 500ms;
+          animation: linha 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
-
 @media (max-width: 768px) {
   .home {
     height: 100%;
     padding: 6rem 4rem;
   }
 }
-
 .home .container {
   display: none;
   width: 100%;
@@ -232,51 +260,54 @@ header .btn-toogle i::after {
   justify-content: center;
   flex-direction: column;
 }
-
 .home .container .legenda {
   text-align: center;
 }
-
 .home .container .legenda h1 {
   padding: 1rem;
   font-weight: 700;
   font-size: 3rem;
   letter-spacing: 2px;
 }
-
+@media (max-width: 768px) {
+  .home .container .legenda h1 {
+    font-size: 10vw;
+  }
+}
 .home .container .legenda p {
   font-size: 1.8rem;
 }
-
+@media (max-width: 768px) {
+  .home .container .legenda p {
+    font-size: 6vw;
+  }
+}
 .home .container .hrefs {
   display: block;
   margin: 2rem 0 0;
   text-align: center;
 }
-
 .home .container .hrefs a {
   color: #333;
-  margin: 0 .6rem;
+  margin: 0 0.6rem;
   border-radius: 3px;
   letter-spacing: 2px;
-  padding: .8rem 2rem;
+  padding: 0.8rem 2rem;
   outline: 1px solid #333;
 }
-
 @media (max-width: 375px) {
   .home .container .hrefs a {
     display: block;
     margin: 1.5rem 1rem;
   }
 }
-
 .home .container .hrefs a.service {
   color: #fff;
   outline: none;
   background: #333;
 }
 
-.services {
+.servico {
   display: block;
   width: 100%;
   padding: 4em;
@@ -287,28 +318,25 @@ header .btn-toogle i::after {
   justify-content: center;
   flex-direction: column;
 }
-
 @media (max-width: 768px) {
-  .services {
+  .servico {
     height: unset;
+    padding: 4rem 2rem;
   }
 }
-
-.services .dialogo {
+.servico .dialogo {
   margin: 0 auto;
   padding: 2rem 0;
   text-align: center;
 }
-
-.services .dialogo h2 {
+.servico .dialogo h2 {
   color: #333;
   padding: 1rem 0;
   font-weight: 900;
   font-size: 2.5rem;
   letter-spacing: 2px;
 }
-
-.services .dialogo p {
+.servico .dialogo p {
   width: 65%;
   margin: 0 auto;
   padding: 0 2rem;
@@ -319,53 +347,47 @@ header .btn-toogle i::after {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-
 @media (max-width: 768px) {
-  .services .dialogo p {
+  .servico .dialogo p {
     width: 100%;
   }
 }
-
-.services article {
+.servico article {
   padding: 3rem 0;
 }
-
 @media (max-width: 768px) {
-  .services article {
-    padding: 3rem;
+  .servico article {
+    padding: 3rem 1rem;
   }
 }
-
-.services article ul {
+.servico article ul {
   width: inherit;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
 }
-
 @media (max-width: 768px) {
-  .services article ul {
+  .servico article ul {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 2rem;
   }
 }
-
-.services article ul li {
+.servico article ul li {
   padding: 1rem;
   border-radius: 3px;
   text-align: center;
   border: 1px solid #333;
 }
-
-.services article ul li .img {
+.servico article ul li .img {
   width: 80px;
   height: 80px;
   padding: 1rem;
   margin: 0 auto;
   display: block;
   overflow: hidden;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -373,27 +395,23 @@ header .btn-toogle i::after {
   flex-direction: row;
   border: 2px solid #ccc;
 }
-
-.services article ul li .img img {
+.servico article ul li .img img {
   display: none;
 }
-
-.services article ul li .img i {
+.servico article ul li .img i {
   font-size: 2rem;
 }
-
-.services article ul li h3 {
+.servico article ul li h3 {
   padding: 1rem 0;
   font-weight: 900;
 }
-
-.services article ul li p {
+.servico article ul li p {
   color: #666;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.6rem;
 }
 
-.contacto {
+.contato {
   height: 100vh;
   background: #000;
   position: relative;
@@ -403,17 +421,16 @@ header .btn-toogle i::after {
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  padding: 4rem 3rem;
+  padding: 4rem 3rem 3.5rem;
 }
-
 @media (max-width: 768px) {
-  .contacto {
+  .contato {
     height: 100%;
+    width: unset;
     flex-direction: column;
   }
 }
-
-.contacto .descreve {
+.contato .descreve {
   left: 10px;
   z-index: 0;
   width: 400px;
@@ -421,89 +438,91 @@ header .btn-toogle i::after {
   height: 200px;
   background: #fff;
   text-align: center;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   position: relative;
   border-radius: 8px;
 }
-
 @media (max-width: 768px) {
-  .contacto .descreve {
+  .contato .descreve {
     top: 10px;
     left: unset;
   }
 }
-
-.contacto .descreve hgroup {
+.contato .descreve hgroup {
   padding: 3rem;
 }
-
-.contacto .descreve hgroup i {
+.contato .descreve hgroup i {
   font-size: 3.4rem;
-  padding: 1rem 0 .5rem;
+  padding: 1rem 0 0.5rem;
 }
-
-.contacto .descreve hgroup h1 {
-  padding: .5rem;
+.contato .descreve hgroup h1 {
+  padding: 0.5rem;
   font-weight: 900;
 }
-
-.contacto .form {
+.contato .descreve hgroup span {
+  padding: 1rem;
+  display: block;
+}
+.contato .descreve hgroup span a {
+  color: #333;
+  margin: 0 0.2rem;
+}
+.contato .descreve hgroup span a i {
+  font-size: 1.4rem;
+}
+.contato .form {
   z-index: 1;
   width: 650px;
   border-radius: 8px;
   background: #333;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   padding: 1rem 1.8rem;
 }
-
 @media (max-width: 768px) {
-  .contacto .form {
+  .contato .form {
     width: 500px;
   }
 }
-
 @media (max-width: 458px) {
-  .contacto .form {
+  .contato .form {
     width: 300px;
   }
 }
-
-.contacto .form div {
+.contato .form div {
   padding: 1rem 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
 }
-
 @media (max-width: 458px) {
-  .contacto .form div {
+  .contato .form div {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
   }
 }
-
-.contacto .form label {
+.contato .form label {
   width: 100%;
 }
-
-.contacto .form label span {
+.contato .form label span {
   color: #fff;
   display: block;
-  padding: .4rem 0;
-  font-size: .9rem;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
 }
-
-.contacto .form label input {
+.contato .form label input {
   width: 100%;
   border: none;
   outline: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
   border-radius: 3px;
-  padding: .6rem .5rem;
+  padding: 0.6rem 0.5rem;
 }
-
-.contacto .form label textarea {
+.contato .form label textarea {
   width: 100%;
   height: 150px;
   border: none;
@@ -515,15 +534,13 @@ header .btn-toogle i::after {
   min-height: 150px;
   border-radius: 3px;
   font-family: Linotte;
-  padding: .6rem .5rem;
+  padding: 0.6rem 0.5rem;
 }
-
-.contacto .form label textarea:focus {
+.contato .form label textarea:focus {
   border: none;
   outline: none;
 }
-
-.contacto .form button {
+.contato .form button {
   float: right;
   border: none;
   color: #333;
@@ -535,5 +552,15 @@ header .btn-toogle i::after {
   border-radius: 3px;
   background: #fff;
   letter-spacing: 2px;
-  padding: .8rem 2rem;
+  padding: 0.8rem 2rem;
 }
+
+.footer {
+  background: #000;
+  width: 100%;
+  padding: 1rem;
+}
+.footer p {
+  color: #fff;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */
