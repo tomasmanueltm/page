@@ -23,7 +23,7 @@ body {
   --l: #ff7d1b;
   --colorB: #fa4a4d;
   --colorC: #1a1b1e;
-  overflow-x: hidden;
+  overflow-x: hidden!important;
 }
 
 ::scrollbar {
